@@ -1,0 +1,109 @@
+/* Set background to black and base text color to whitesmoke */
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: whitesmoke;
+  font-family: Arial, sans-serif;
+  cursor: auto; /* default cursor */
+}
+
+
+/* Container to take full height minus top margin space */
+.container.d-flex {
+  flex-direction: column;
+  padding-top: 5vh; /* Raise content 5vh from top */
+}
+
+/* Centered h1 styles */
+h1.text-center {
+  margin-top: 0; /* Reset any top margin */
+  margin-bottom: 2rem;
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Image overlay wrapper */
+.col-12.col-md-6 {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+/* Overlay style */
+.col-12.col-md-6 a::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Show overlay on hover */
+.col-12.col-md-6 a:hover::before {
+  opacity: 1;
+}
+
+/* Slight movement effect on image hover */
+.col-12.col-md-6 a img {
+  transition: transform 0.3s ease;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.col-12.col-md-6 a:hover img {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Responsive checks - Bootstrap handles layout responsiveness,
+   ensure margin/padding does not break layout on smaller screens */
+
+/* Styles for permanent overlay on left image */
+.image-overlay-container {
+  position: relative; /* Ensure absolute children positioned relative to this */
+  display: inline-block;
+}
+
+/* Permanent dark overlay covering the entire left image */
+.overlay-permanent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Centered white smoke text over the overlay */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: whitesmoke;
+  font-size: 3rem; /* Large font size for prominence */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  z-index: 4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Responsive adaptation if needed */
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 2rem;
+  }
+}

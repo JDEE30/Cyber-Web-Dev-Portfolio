@@ -1,30 +1,45 @@
-height: 100%;
-  margin: 0;
-  background-color: black;
-  color: whitesmoke;
-  font-family: Arial, sans-serif;
-}
+ensure margin/padding does not break layout on smaller screens */
 =======
-body, html {
-  height: 100%;
-  margin: 0;
-  background-color: black;
-  color: whitesmoke;
-  font-family: Arial, sans-serif;
-  cursor: url('https://oldschool.runescape.wiki/w/File:Bryophyta%27s_staff_(uncharged)_detail.png'), auto;
-}
->>>>>>> REPLACE
+/* Responsive checks - Bootstrap handles layout responsiveness,
+   ensure margin/padding does not break layout on smaller screens */
 
-<<<<<<< SEARCH
-/* Image overlay wrapper */
-.col-12.col-md-6 {
-  position: relative;
-  overflow: hidden;
+/* Styles for permanent overlay on left image */
+.image-overlay-container {
+  position: relative; /* Ensure absolute children positioned relative to this */
+  display: inline-block;
 }
-=======
-/* Image overlay wrapper */
-.col-12.col-md-6 {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
+
+/* Permanent dark overlay covering the entire left image */
+.overlay-permanent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Centered white smoke text over the overlay */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: whitesmoke;
+  font-size: 3rem; /* Large font size for prominence */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  z-index: 4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Responsive adaptation if needed */
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 2rem;
+  }
 }
