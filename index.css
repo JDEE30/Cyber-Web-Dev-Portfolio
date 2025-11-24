@@ -1,0 +1,65 @@
+/* Set background to black and base text color to whitesmoke */
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: whitesmoke;
+  font-family: Arial, sans-serif;
+  cursor: url('https://oldschool.runescape.wiki/w/File:Bryophyta%27s_staff_(uncharged)_detail.png'), auto;
+}
+
+/* Container to take full height minus top margin space */
+.container.d-flex {
+  flex-direction: column;
+  padding-top: 5vh; /* Raise content 5vh from top */
+}
+
+/* Centered h1 styles */
+h1.text-center {
+  margin-top: 0; /* Reset any top margin */
+  margin-bottom: 2rem;
+  color: whitesmoke;
+}
+
+/* Image overlay wrapper */
+.col-12.col-md-6 {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+/* Overlay style */
+.col-12.col-md-6 a::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Show overlay on hover */
+.col-12.col-md-6 a:hover::before {
+  opacity: 1;
+}
+
+/* Slight movement effect on image hover */
+.col-12.col-md-6 a img {
+  transition: transform 0.3s ease;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.col-12.col-md-6 a:hover img {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Responsive checks - Bootstrap handles layout responsiveness,
+   ensure margin/padding does not break layout on smaller screens */

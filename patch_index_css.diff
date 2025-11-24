@@ -1,0 +1,30 @@
+height: 100%;
+  margin: 0;
+  background-color: black;
+  color: whitesmoke;
+  font-family: Arial, sans-serif;
+}
+=======
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: whitesmoke;
+  font-family: Arial, sans-serif;
+  cursor: url('https://oldschool.runescape.wiki/w/File:Bryophyta%27s_staff_(uncharged)_detail.png'), auto;
+}
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+/* Image overlay wrapper */
+.col-12.col-md-6 {
+  position: relative;
+  overflow: hidden;
+}
+=======
+/* Image overlay wrapper */
+.col-12.col-md-6 {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
